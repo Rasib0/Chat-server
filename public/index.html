@@ -2,21 +2,33 @@
 <html>
   <head>
     <title>Socket.IO chat</title>
-    <link rel="stylesheet" href="./styles/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
   </head>
 
-  <body>
-    <div class="flex flex-col">
-      <ul class="mb-auto" id="messages"></ul>
-      <form id="form" class="border bg-zinc-400 p-2" action="">
-        <input
-          id="input"
-          class="border border-zinc-700 rounded-md m-2"
-          autocomplete="off"
-        /><button>Send</button>
-      </form>
-      <script src="/socket.io/socket.io.js"></script>
-      <script src="./scripts/index.js"></script>
+  <body class="bg-gray-900">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+      <div class="w-96 border bg-white rounded-lg p-4 shadow-md">
+        <ul class="h-56 overflow-y-auto mb-4" id="messages"></ul>
+        <form id="form" class="border-t pt-4">
+          <div class="flex">
+            <input
+              id="input"
+              class="flex-1 border border-gray-300 rounded-md p-2 mr-2"
+              autocomplete="off"
+            />
+            <button
+              class="px-4 bg-gray-900 py-2 hover:bg-gray-800 text-white rounded-md"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
